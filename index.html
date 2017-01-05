@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+    <meta name="apple-touch-fullscreen" content="yes">
+    <link rel="stylesheet" href="./css/sass.css"/>
+</head>
+<body ng-app="mapp">
+<header class="header">
+    <h3>=</h3>
+    <h2>理财产品</h2>
+</header>
+<section class="section" ng-controller="ctrl">
+    <div class="stitle">
+        <span class="stitleborder">债权产品</span>
+        <span>优选基金</span>
+    </div>
+    <div class="main">
+        <div ng-repeat="x in json">
+            <h3>{{x.n1}}<span class="grey"> | {{x.n2}}</span></h3>
+            <div class="row">
+                <p class="f50 h1 orange">{{x.n3}}</p>
+                <div class="grey">
+                    <p class="p">年化收益</p>
+                    <p class="p pb orange">.0%</p>
+                </div>
+                <div class="grey">
+                    <p class="p">期限</p>
+                    <p class="p pb"><big class="black">{{x.n4}}</big>个月</p>
+                </div>
+                <dl class="dl">
+                    <dd class="dd1">抢购</dd>
+                    <dd>已有{{x.n5}}人购买</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <figure>
+        <img src="" alt="图标"/>
+        <figcaption>首页</figcaption>
+    </figure>
+    <figure>
+        <img src="" alt="图标"/>
+        <figcaption>理财产品</figcaption>
+    </figure>
+    <figure>
+        <img src="" alt="图标"/>
+        <figcaption>我的账户</figcaption>
+    </figure>
+    <figure>
+        <img src="" alt="图标"/>
+        <figcaption>更多</figcaption>
+    </figure>
+</footer>
+<script src="./js/angular.min.js"></script>
+<script src="./js/jquery-3.1.1.js"></script>
+<script>
+    var app=angular.module('mapp',[]);
+    app.controller('ctrl',function($scope){
+        $scope.json=[
+            {
+                n1:'押租宝',
+                n2:'汽车供应链第75期',
+                n3:'12',
+                n4:'3',
+                n5:'163'
+            },
+            {
+                n1:'押租宝',
+                n2:'汽车供应链第75期',
+                n3:'12',
+                n4:'3',
+                n5:'163'
+            },
+            {
+                n1:'押租宝',
+                n2:'汽车供应链第75期',
+                n3:'12',
+                n4:'3',
+                n5:'163'
+            },
+            {
+                n1:'押租宝',
+                n2:'汽车供应链第75期',
+                n3:'12',
+                n4:'3',
+                n5:'163'
+            }
+        ]
+    })
+</script>
+</body>
+</html>

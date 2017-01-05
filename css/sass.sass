@@ -1,0 +1,121 @@
+@media (min-width: 320px)
+  html
+    font-size: 12px
+
+@media (min-width: 375px)
+  html
+    font-size: 16px
+
+@mixin row
+  display: flex
+  flex-direction: row
+
+@mixin column
+  display: flex
+  flex-direction: column
+
+@mixin cent
+  justify-content: center
+  align-items: center
+
+@mixin positionR
+  position: relative
+
+@mixin positionA
+  position: absolute
+
+@function p2r($v)
+  @return ($v/16/2)+rem
+
+.stitleborder
+  border-right: 1px #ccc solid
+.grey
+  color: grey
+.f50
+  font-size: p2r(120)
+.orange
+  color: rgb(255,136,0)
+.black
+  color: black
+  font-weight: bold
+/*----------------------------start-------------------------------------------------------*/
+*
+  margin: 0
+  padding: 0
+html,body
+  width: 100%
+  height: 100%
+  max-width: 1024px
+body
+  margin: 0 auto //这里居中不好使
+  @include column
+/*----------------------------header-------------------------------------------------------*/
+.header
+  height: p2r(88)
+  background: rgb(237,88,88)
+  @include row
+  @include cent
+  @include positionR
+  & h2,& h3
+    color: white
+  & h3
+    @include positionA
+    right: 1rem
+/*----------------------------footer-------------------------------------------------------*/
+.footer
+  height: p2r(108)
+  @include row
+  @include cent
+  justify-content: space-around
+  border-top: 1px solid #ccc
+  box-sizing: border-box
+  &>figure
+    width: 25%
+    text-align: center
+/*----------------------------section-------------------------------------------------------*/
+.section
+  flex-grow: 1
+  overflow-y: auto
+  .stitle
+    height: p2r(88)
+    @include row
+    @include cent
+    border-bottom: 1px solid #ccc
+    & span
+      flex-grow: 1
+      text-align: center
+      font-size: 1.2rem
+  .main
+    &>div
+      margin-top: 1rem
+      padding: 0 1rem
+      border-bottom: 1px solid #ccc
+    .row
+      @include row
+      @include positionR
+      .h1
+        vertical-align: text-bottom
+      & div
+        padding-top: 1rem
+        flex: 1
+      .p
+        @include row
+        & span
+          flex-grow: 1
+      .pb
+        line-height: 2.5rem
+      .dl
+        @include column
+        @include cent
+        transform: translate(0,-25%)
+      .dd1
+        height: 4rem
+        width: 4rem
+        background: rgb(255,97,97)
+        border-radius: 50%
+        text-align: center
+        line-height: 4rem
+        margin-bottom: .5rem
+        color: whitesmoke
+        font-size: 1.2rem
+
